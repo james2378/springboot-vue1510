@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FanhuijizhenglifenleiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FanhuijizhenglifenleiEntity" id="fanhuijizhenglifenleiMap">
+        <result property="shoulibianhao" column="shoulibianhao"/>
+        <result property="chanpinmingcheng" column="chanpinmingcheng"/>
+        <result property="chanpinfenlei" column="chanpinfenlei"/>
+        <result property="zhubanbianhao" column="zhubanbianhao"/>
+        <result property="xianshiqibianhao" column="xianshiqibianhao"/>
+        <result property="wuxianmokuaibianhao" column="wuxianmokuaibianhao"/>
+        <result property="shoulijifenlei" column="shoulijifenlei"/>
+        <result property="fenleishijian" column="fenleishijian"/>
+        <result property="renyuanzhanghao" column="renyuanzhanghao"/>
+        <result property="renyuanxingming" column="renyuanxingming"/>
+        <result property="kehuzhanghao" column="kehuzhanghao"/>
+        <result property="kehuxingming" column="kehuxingming"/>
+        <result property="dianhuahaoma" column="dianhuahaoma"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FanhuijizhenglifenleiVO" >
+		SELECT * FROM fanhuijizhenglifenlei  fanhuijizhenglifenlei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FanhuijizhenglifenleiVO" >
+		SELECT  fanhuijizhenglifenlei.* FROM fanhuijizhenglifenlei  fanhuijizhenglifenlei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FanhuijizhenglifenleiView" >
+
+		SELECT  fanhuijizhenglifenlei.* FROM fanhuijizhenglifenlei  fanhuijizhenglifenlei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FanhuijizhenglifenleiView" >
+		SELECT * FROM fanhuijizhenglifenlei  fanhuijizhenglifenlei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

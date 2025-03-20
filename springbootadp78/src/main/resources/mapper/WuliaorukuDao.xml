@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WuliaorukuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WuliaorukuEntity" id="wuliaorukuMap">
+        <result property="rukubianhao" column="rukubianhao"/>
+        <result property="wuliaomingcheng" column="wuliaomingcheng"/>
+        <result property="wuliaoleixing" column="wuliaoleixing"/>
+        <result property="xinghao" column="xinghao"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="rukushijian" column="rukushijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WuliaorukuVO" >
+		SELECT * FROM wuliaoruku  wuliaoruku         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WuliaorukuVO" >
+		SELECT  wuliaoruku.* FROM wuliaoruku  wuliaoruku 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WuliaorukuView" >
+
+		SELECT  wuliaoruku.* FROM wuliaoruku  wuliaoruku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WuliaorukuView" >
+		SELECT * FROM wuliaoruku  wuliaoruku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
